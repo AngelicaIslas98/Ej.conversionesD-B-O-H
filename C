@@ -1,0 +1,47 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include <locale.h>
+int main()
+{
+	int opt, num, mod, bin, i;
+	i=1;
+	bin=0;
+	system("cls");
+	setlocale(LC_ALL, "spanish");
+	printf("Seleccione un sistema de numeración:\n1 es Binario \n2 es Octal \n3 es Hexadecimal\n ");
+	scanf("%d",&opt);
+		
+	switch(opt){
+		case 1:
+			printf("Binarios\n");
+			printf("Digite un número decimal:\n");
+    		scanf("%d",&num);
+			while(num!=0)
+			{
+		        mod = num%2;
+		        num /= 2;
+		        bin += mod*i;
+		        i *= 10;
+	    	}
+   			 printf("Su equivalente en binario es: %d\n", bin);
+		   	break;
+		   	
+		case 2:
+			printf("Octal\n");
+			printf("Digite un número decimal:\n");
+    		scanf("%d",&num);
+			printf("Su equivalente en octal es: %o\n", num);
+			break;
+		case 3:
+			printf("Hexadecimal\n");
+			printf("Digite un número decimal:\n");
+    		scanf("%d",&num);
+			printf("Su equivalente en Hexadecimal es: %X\n", num);
+			break;
+		default:
+			printf("¿A qué quiere que lo convierta? ¿Sistema alienigena?");
+			break;
+	}
+	return 0;
+}
